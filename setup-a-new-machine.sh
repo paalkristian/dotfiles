@@ -126,10 +126,11 @@ fi
 
 ##############################################################################################################
 ### homebrew!
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # (if your machine has /usr/local locked down (like google's), you can do this to place everything in ~/.homebrew
-mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
-export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
+#mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
+# export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # install all the things
 ./brew.sh
@@ -137,8 +138,6 @@ export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 ### end of homebrew
 ##############################################################################################################
-
-
 
 
 ##############################################################################################################
@@ -177,20 +176,6 @@ git clone https://github.com/rupa/z.git ~/code/z
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z is hooked up in .bash_profile
 
-
-# github.com/thebitguru/play-button-itunes-patch
-# disable itunes opening on media keys
-git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-button-itunes-patch
-
-
-# my magic photobooth symlink -> dropbox. I love it.
-# 	 + first move Photo Booth folder out of Pictures
-# 	 + then start Photo Booth. It'll ask where to put the library.
-# 	 + put it in Dropbox/public
-# 	* Now… you can record photobooth videos quickly and they upload to dropbox DURING RECORDING
-# 	* then you grab public URL and send off your video message in a heartbeat.
-
-
 # for the c alias (syntax highlighted cat)
 sudo easy_install Pygments
 
@@ -204,56 +189,8 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 # Later, confirm iterm settings aren't conflicting.
 
 
-# iterm with more margin! http://hackr.it/articles/prettier-gutter-in-iterm-2/
-#   (admittedly not as easy to maintain)
-
-
-# setting up the sublime symlink
-ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
-
 # install nvm (Node Version Nanager, https://github.com/nvm-sh/nvm)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-
-
-###
-##############################################################################################################
-
-
-## Chromium hacking
-
-# improve perf of git inside of chromium checkout
-
-# read https://chromium.googlesource.com/chromium/src/+/master/docs/mac_build_instructions.md
-
-# default is (257*1024)
-sudo sysctl kern.maxvnodes=$((512*1024))
-echo kern.maxvnodes=$((512*1024)) | sudo tee -a /etc/sysctl.conf
-
-# https://facebook.github.io/watchman/docs/install.html#mac-os-file-descriptor-limits
-sudo sysctl -w kern.maxfiles=$((10*1024*1024))
-sudo sysctl -w kern.maxfilesperproc=$((1024*1024))
-echo kern.maxfiles=$((10*1024*1024)) | sudo tee -a /etc/sysctl.conf
-echo kern.maxfilesperproc=$((1024*1024)) | sudo tee -a /etc/sysctl.conf
-
-
-# speed up git status (to run only in chromium repo)
-git config status.showuntrackedfiles no
-git update-index --untracked-cache
-
-# faster git server communication.
-# like a LOT faster. https://opensource.googleblog.com/2018/05/introducing-git-protocol-version-2.html
-git config protocol.version 2
-
-# see also "A Chromium Compiling Setup for DevTools Hackers"
-# https://gist.github.com/paulirish/2d84a6db1b41b4020685
-
-# also this unrelated thing
-# git config user.email "xxxx@chromium.org"
-
-
-##############################################################################################################
-### remaining configuration
-###
 
 # go read mathias, paulmillr, gf3, alraa's dotfiles to see what's worth stealing.
 
