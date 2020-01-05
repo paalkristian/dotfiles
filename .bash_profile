@@ -140,5 +140,3 @@ shopt -s globstar 2> /dev/null
 # Add jenv to path
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-
-echo "Lol"
