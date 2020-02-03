@@ -1,5 +1,5 @@
 [alias]
-	c = commit -am
+	c = commit -m
 	fpush = push --force
 	s = status
 	sclone = clone --depth=1
@@ -20,7 +20,7 @@
 	git = !exec git
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/paalkristianminne/.gitignore
 	attributesfile = ~/.gitattributes
 	precomposeUnicode = true
 
@@ -106,3 +106,11 @@
 [user]
 	name = Paal Kristian Minne
 	email = paal.kristian.minne@gmail.com
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/paalkristianminne/.stCommitMsg

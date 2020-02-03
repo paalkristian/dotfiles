@@ -70,5 +70,11 @@ brew install zsh
 brew install antigen
 
 
+# Set up python 3
+brew install python
+brew install pyenv
+pyenv install 3.7.3 # Set this to newset python version
+pyenv global 3.7.3
+
 # Remove outdated versions from the cellar
 brew cleanup

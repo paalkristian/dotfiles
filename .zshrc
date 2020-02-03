@@ -109,3 +109,12 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 jenv global 11.0
+
+# Set up python
+eval "$(pyenv init -)"
+export PATH="$PATH:/Users/paalkristianminne/.local/bin"
+export PATH="$PATH:/usr/local/anaconda3/bin"
+
+
+export GEM_HOME=/Users/paalkristianminne/.gem
+export PATH="$GEM_HOME/ruby/2.6.0/bin:$PATH"
