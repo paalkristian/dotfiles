@@ -76,5 +76,8 @@ brew install pyenv
 pyenv install 3.7.3 # Set this to newset python version
 pyenv global 3.7.3
 
+# Setup golang
+brew install go
+
 # Remove outdated versions from the cellar
 brew cleanup

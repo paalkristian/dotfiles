@@ -92,3 +92,6 @@ alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo 
 
 # VS Code
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
+# Kubectl
+alias k=kubectl

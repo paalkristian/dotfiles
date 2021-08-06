@@ -111,10 +111,48 @@ eval "$(jenv init -)"
 jenv global 11.0
 
 # Set up python
-eval "$(pyenv init -)"
+export PYENV_SHELL=zsh
+# TODO: This does not look good...
+source '/usr/local/Cellar/pyenv/2.0.1/libexec/../completions/pyenv.zsh'
+command pyenv rehash 2>/dev/null
+pyenv() {
+  local command
+  command="${1:-}"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval "$(pyenv "sh-$command" "$@")"
+    ;;
+  *)
+    command pyenv "$command" "$@"
+    ;;
+  esac
+}
 export PATH="$PATH:/Users/paalkristianminne/.local/bin"
 export PATH="$PATH:/usr/local/anaconda3/bin"
 
-
+# Set up ruby for compass. Should be removed when I no longer need it.
 export GEM_HOME=/Users/paalkristianminne/.gem
 export PATH="$GEM_HOME/ruby/2.6.0/bin:$PATH"
+
+
+# Setup golang
+export PATH=$HOME/go/bin:$PATH
+
+# Setup flutter
+export PATH="$PATH:/Users/paalkristianminne/flutter/flutter/bin"
+
+# K8s stuff
+source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
+echo "[[ $commands[kubectl] ]] && source <(kubectl completion zsh)" >> ~/.zshrc # add autocomplete permanently to your zsh shell
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh) # add autocomplete permanently to your zsh shell
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
