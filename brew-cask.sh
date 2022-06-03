@@ -8,7 +8,7 @@ brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
 # daily
-brew cask install spectacle
+brew cask install spectacle # use rectange instead
 brew cask install rescuetime
 brew cask install notion
 

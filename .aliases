@@ -95,3 +95,7 @@ alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 
 # Kubectl
 alias k=kubectl
+
+alias kcc="kubectl config current-context"
+
+alias kcu="kubectl config use-context"

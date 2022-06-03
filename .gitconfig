@@ -114,3 +114,6 @@
 	trustExitCode = true
 [commit]
 	template = /Users/paalkristianminne/.stCommitMsg
+[init]
+	defaultBranc = main
+	defaultBrand = main
