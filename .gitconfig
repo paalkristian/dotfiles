@@ -117,3 +117,6 @@
 [init]
 	defaultBranc = main
 	defaultBrand = main
+	defaultBranch = main
+[credential]
+	helper = manager-core

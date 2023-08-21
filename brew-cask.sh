@@ -8,13 +8,11 @@ brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
 # daily
-brew cask install spectacle # use rectange instead
 brew cask install rescuetime
 brew cask install notion
 
 # dev
 brew cask install iterm2
-brew cask install intellij-idea
 brew cask install insomnia
 brew cask install sourcetree
 

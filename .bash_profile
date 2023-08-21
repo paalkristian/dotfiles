@@ -7,15 +7,15 @@ done
 unset file
 
 # generic colouriser
-GRC=`which grc`
-if [ "$TERM" != dumb ] && [ -n "$GRC" ]
-    then
-        alias colourify="$GRC -es --colour=auto"
-        alias configure='colourify ./configure'
-        for app in {diff,make,gcc,g++,ping,traceroute}; do
-            alias "$app"='colourify '$app
-    done
-fi
+# GRC=`which grc`
+# if [ "$TERM" != dumb ] && [ -n "$GRC" ]
+#     then
+#         alias colourify="$GRC -es --colour=auto"
+#         alias configure='colourify ./configure'
+#         for app in {diff,make,gcc,g++,ping,traceroute}; do
+#             alias "$app"='colourify '$app
+#     done
+# fi
 
 # highlighting inside manpages and elsewhere
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -141,3 +141,9 @@ export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$PATH:/Users/paalkristianminne/.local/bin"
 eval "$(jenv init -)"
 # eval "$(pyenv init -)"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/paalkristianminne/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

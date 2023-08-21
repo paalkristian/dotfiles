@@ -60,11 +60,12 @@ antigen apply
 #################################################################################################
 
 
-
 # bind UP and DOWN arrow keys for history search
 zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+# bindkey "$terminfo[kcuu1]" history-substring-search-up
+# bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 export PURE_GIT_UNTRACKED_DIRTY=0
 
@@ -97,17 +98,13 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 # uncomment to finish profiling
 # zprof
 
-# Load default dotfiles
-source ~/.bash_profile
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set up python
 export PYENV_SHELL=zsh
-# TODO: This does not look good...
-source '/usr/local/Cellar/pyenv/2.0.1/libexec/../completions/pyenv.zsh'
+
 command pyenv rehash 2>/dev/null
 pyenv() {
   local command
@@ -128,11 +125,6 @@ pyenv() {
 export PATH="$PATH:/Users/paalkristianminne/.local/bin"
 export PATH="$PATH:/usr/local/anaconda3/bin"
 
-# Set up ruby for compass. Should be removed when I no longer need it.
-export GEM_HOME=/Users/paalkristianminne/.gem
-export PATH="$GEM_HOME/ruby/2.6.0/bin:$PATH"
-
-
 # Setup golang
 export PATH=$HOME/go/bin:$PATH
 
@@ -150,4 +142,15 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/paalkristianminne/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+
+
+# Load default dotfiles
+source ~/.bash_profile
