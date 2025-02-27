@@ -1,6 +1,6 @@
 # uncomment to profile prompt startup with zprof
-# zmodload zsh/zprof
-
+zmodload zsh/zprof
+ANTIGEN_LOG=~/antigen.log
 # history
 SAVEHIST=100000
 
@@ -102,34 +102,8 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Set up python
-export PYENV_SHELL=zsh
-
-command pyenv rehash 2>/dev/null
-pyenv() {
-  local command
-  command="${1:-}"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  rehash|shell)
-    eval "$(pyenv "sh-$command" "$@")"
-    ;;
-  *)
-    command pyenv "$command" "$@"
-    ;;
-  esac
-}
-export PATH="$PATH:/Users/paalkristianminne/.local/bin"
-export PATH="$PATH:/usr/local/anaconda3/bin"
-
 # Setup golang
 export PATH=$HOME/go/bin:$PATH
-
-# Setup flutter
-export PATH="$PATH:/Users/paalkristianminne/flutter/flutter/bin"
 
 # K8s stuff
 # source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
@@ -138,19 +112,11 @@ export PATH="$PATH:/Users/paalkristianminne/flutter/flutter/bin"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/paalkristianminne/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)export PATH="/usr/local/opt/sqlite/bin:$PATH"
-
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
-export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="/Users/paalkristianminne/development/flutter/bin:$PATH"
 
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-
-
+export PATH=$HOME/.gem/bin:$PATH
 
 # Load default dotfiles
 source ~/.bash_profile

@@ -190,7 +190,7 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 
 
 # install nvm (Node Version Nanager, https://github.com/nvm-sh/nvm)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
 # go read mathias, paulmillr, gf3, alraa's dotfiles to see what's worth stealing.
 
@@ -200,11 +200,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 # set up osx defaults
 #   maybe something else in here https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
 sh .osx
-
-# setup and run Rescuetime!
-
-###
-##############################################################################################################
 
 
 
