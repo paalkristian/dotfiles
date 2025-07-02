@@ -28,7 +28,7 @@ brew install homebrew/completions/brew-cask-completion
 # Install wget with IRI support
 brew install wget --with-iri
 
-# Install more recent versions of some OS X tools
+# Install more recent versions of some OS X toolss
 brew install vim --with-override-system-vi
 brew install homebrew/dupes/nano
 brew install homebrew/dupes/grep
@@ -73,8 +73,8 @@ brew install antigen
 # Set up python 3
 brew install python
 brew install pyenv
-pyenv install 3.13.2 # Set this to newset python version
-pyenv global 3.13.2
+pyenv install 3.13.5 # Set this to newset python version
+pyenv global 3.13.5
 
 # Setup golang
 brew install go

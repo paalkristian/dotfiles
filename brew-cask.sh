@@ -30,3 +30,15 @@ brew install --cask spotify
 
 brew install --cask slack
 
+
+# Version manager
+brew install mise
+
+brew install direnv
+
+#Java
+brew install visualvm # Java profiler
+
+
+
+brew install --cask jetbrains-toolbox
