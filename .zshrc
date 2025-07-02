@@ -47,11 +47,11 @@ antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-se
 antigen bundle tarruda/zsh-autosuggestions
 
 # colors for all files!
-antigen bundle trapd00r/zsh-syntax-highlighting-filetypesq
+# antigen bundle trapd00r/zsh-syntax-highlighting-filetypesq
 
 # dont set a theme, because pure does it all
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+# antigen bundle mafredri/zsh-async
+# antigen bundle sindresorhus/pure
 
 # Tell antigen that you're done.
 antigen apply
@@ -120,3 +120,15 @@ export PATH=$HOME/.gem/bin:$PATH
 
 # Load default dotfiles
 source ~/.bash_profile
+
+# UV autocompletion
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
+
+export PATH="/opt/homebrew/opt/pnpm/bin:$PATH"
+
+export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+
+# Add .NET Core SDK tools
+export PATH="$PATH:/Users/paalkristianminne/.dotnet/tools"

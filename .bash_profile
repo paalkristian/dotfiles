@@ -136,14 +136,4 @@ shopt -s dirspell 2> /dev/null
 # Turn on recursive globbing (enables ** to recurse all directories)
 shopt -s globstar 2> /dev/null
 
-# Add jenv to path
-export PATH="$HOME/.jenv/bin:$PATH"
-export PATH="$PATH:/Users/paalkristianminne/.local/bin"
-eval "$(jenv init -)"
-# eval "$(pyenv init -)"
 
-export PATH="$HOME/.poetry/bin:$PATH"
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/paalkristianminne/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
