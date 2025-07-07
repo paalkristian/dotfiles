@@ -46,7 +46,6 @@ alias lsd='ls -l | grep "^d"' # only directories
 function clone() {
     git clone --depth=1 $1
     cd $(basename ${1%.*})
-    yarn install
 }
 alias push="git push"
 
@@ -55,7 +54,6 @@ alias undopush="git push -f origin HEAD^:master"
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
-alias master="git checkout master"
 
 # Networking. IP address, dig, DNS
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

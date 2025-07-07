@@ -132,3 +132,7 @@ export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 
 # Add .NET Core SDK tools
 export PATH="$PATH:/Users/paalkristianminne/.dotnet/tools"
+
+export PATH="$PATH:/Applications/IntelliJ IDEA.app/Contents/MacOS"
+
+echo "ZSH configuration loaded successfully."

@@ -42,3 +42,11 @@ brew install visualvm # Java profiler
 
 
 brew install --cask jetbrains-toolbox
+
+brew install azure-cli
+brew install k9s
+brew install uv
+brew install kubectl
+
+brew install --cask cursor
+brew install --cask ollamac

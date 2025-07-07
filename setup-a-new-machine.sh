@@ -27,7 +27,6 @@ yarn global list --depth=0 > yarn-g-list.txt
 # backup some dotfiles likely not under source control
 cp -Rp \
     ~/.bash_history \
-    ~/.extra ~/.extra.fish \
     ~/.gitconfig.local \
     ~/.gnupg \
     ~/.nano \
@@ -190,7 +189,8 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 
 
 # install nvm (Node Version Nanager, https://github.com/nvm-sh/nvm)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+# Todo: use mise instead?
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
 # go read mathias, paulmillr, gf3, alraa's dotfiles to see what's worth stealing.
 
